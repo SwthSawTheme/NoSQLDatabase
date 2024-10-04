@@ -46,6 +46,8 @@ if __name__ == "__main__":
     print(db.insert({"Saw": "22 anos"}))
     print(db.insert({"_id": "15","Clary": "22 anos"}))
 
+    print(db.update_by_id("15",{"lucas": "19 anos"}))
+
     print(db.delete_by_id("12"))
     print(db.find_by_id("15"))
     print(db.find_by_id("12"))
