@@ -24,7 +24,7 @@ class NoSQLDatabase:
             return "ID não encontrado!"
         return self.data[id]
     
-    def update_by_id(self,id:str,dados:str) -> str:
+    def update_by_id(self,id:str,dados:dict) -> str:
 
         if id not in self.data:
             return "ID não encontrado!"
@@ -38,6 +38,9 @@ class NoSQLDatabase:
         
         del self.data[id]
         return "Removido com sucesso!"
+    
+    def find_all(self) -> list:
+        return list(self.data.values())
 
 if __name__ == "__main__":
     db = NoSQLDatabase()
@@ -51,4 +54,5 @@ if __name__ == "__main__":
     print(db.delete_by_id("12"))
     print(db.find_by_id("15"))
     print(db.find_by_id("12"))
+    print(db.find_all())
     
